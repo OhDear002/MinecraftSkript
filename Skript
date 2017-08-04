@@ -1,0 +1,142 @@
+on join:
+	teleport player to {spawn}
+	set join message to ""
+	set slot 0 of player's inventory to air
+	set slot 1 of player's inventory to air
+	set slot 2 of player's inventory to air
+	set slot 3 of player's inventory to air
+	set slot 4 of player's inventory to rose red named "Menu"
+	set helmet of the player to air
+	set chestplate of the player to air
+	set leggings of the player to air
+	set boots of the player to air
+  
+  every second:
+	loop all players:		
+		Set {_ping} to the loop-player's ping
+		if {_ping} is less than 3:
+			set tab header to "Don't know yet" and footer to "Ping: &a%{_ping}% %{kill counter.%loop-player%.kills_total}%" for loop-player
+		if {_ping} is greater than 3:
+			set tab header to "Don't know yet" and footer to "Ping: &e%{_ping}% %{kill counter.%loop-player%.kills_total}%" for loop-player
+		if {_ping} is greater than 150:
+			set tab header to "Don't know yet" and footer to "Ping: &c%{_ping}% %{kill counter.%loop-player%.kills_total}%" for loop-player
+			
+on quit:
+	set quit message to ""
+	set slot 0 of player's inventory to air
+	set helmet of the player to air
+	set chestplate of the player to air
+	set leggings of the player to air
+	set boots of the player to air
+	
+	
+on death:
+    if the attacker is a player:
+        if the victim is a zombie:
+            add 1 to {kills::%attacker%}
+            if {kills::%attacker%} is 6:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 8:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 13:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 18:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 24:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 27:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 28:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 29:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 33:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 34:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 37:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 39:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 41:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 44:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 47:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 50:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 53:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 56:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 60:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 63:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 67:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 71:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 75:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 80:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 86:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 89:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 94:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 99:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 105:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 110:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 116:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 121:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 127:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 134:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 140:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 147:
+                add 1 to {level::%player%}
+            if {kills::%attacker%} is 153:
+                add 1 to {level::%player%}     
+				    add {kills::%attacker%} to {actionbar::animations::*}
+		      else if arg 1 is "0":
+			      delete {actionbar::animations::*}
+            
+on rightclick holding rose red:
+    player's world is "MapDUNNUyet":
+        open chest with 3 rows named "Menu" to player
+        wait a tick
+        set slot 10 of player's current inventory to rose red named "&rStoryline"
+        set slot 13 of player's current inventory to skull of player named "&rProfile"
+        set slot 16 of player's current inventory to bow named "&rSolo"
+
+ 
+on inventory click:
+  if inventory name of player's current inventory is "Menu":
+    if clicked slot is 10:
+      open chest with 3 rows named "&c&lStoryline" to player
+      wait a tick
+      set slot 10 of player's current inventory to rose red named "&r&lChapter 1"
+      set slot 13 of player's current inventory to rose red named "&r&lChapter 2"
+      set slot 16 of player's current inventory to rose red named "&r&lChapter 3"
+      set slot 22 of player's current inventory to bed named "&r&lBack"
+    if clicked slot is 13:
+      open chest with 3 rows named "&c&lProfile" to player
+      wait a tick
+      set slot 10 of player's current inventory to rose red named "&r&lChapter 1"
+      set slot 13 of player's current inventory to rose red named "&r&lChapter 2"
+      set slot 16 of player's current inventory to rose red named "&r&lChapter 3"
+      set slot 22 of player's current inventory to bed named "&r&lBack"
+
+    cancel event
+  cancel event            
